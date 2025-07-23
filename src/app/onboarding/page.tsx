@@ -1,5 +1,8 @@
 "use client";
 import BirdChatImages from "@/app/assets/bird_chat.svg";
+import ArrowRight from "@/app/assets/arrow-right.svg";
+import ArrowLeft from "@/app/assets/arrow-left.svg";
+import { useRouter } from "next/navigation";
 
 import {
   Languange,
@@ -13,13 +16,21 @@ import LanguangeBar from "./components/LanguangeBar/LanguangeBar";
 const OnboardingPages = () => {
   const { languange } = useQuizContextState();
   const { setLanguange } = useQuizContextFunction();
+  const router = useRouter();
+
+  const handleNextOnBoarding = () => {
+    router.push("/quiz");
+  };
+
+  const handleBackOnBoarding = () => {
+    router.back();
+  };
 
   const handleLanguageClick = () => {
     const newLanguage: Languange = languange === "my" ? "eng" : "my";
     setLanguange(newLanguage);
   };
 
-  console.log(languange);
   return (
     <div>
       <div className="flex flex-row items-center mb-8">
@@ -60,6 +71,30 @@ const OnboardingPages = () => {
         typeCountry="eng"
         onClick={handleLanguageClick}
       />
+      <footer className="text-center fixed bottom-0 left-0 w-full bg-white p-4 flex items-center justify-between gap-4 border-t border-gray-200">
+        <button
+          onClick={handleBackOnBoarding}
+          className="w-20 font-bold flex items-center rounded-xl px-5 py-3 space-x-[4px] transition-colors duration-200 cursor-pointer border border-orange-400 hover:bg-orange-40/80"
+        >
+          <div className="flex flex-row items-center justify-center space-x-2">
+            <Image src={ArrowLeft} alt="Arrow Right" width={16} height={16} />
+            <span className="text-orange-400 text-center font-normal text-sm flex m-auto">
+              Back
+            </span>
+          </div>
+        </button>
+        <button
+          onClick={handleNextOnBoarding}
+          className="w-20 font-bold flex items-center rounded-xl px-5 py-3 space-x-[4px] transition-colors duration-200 cursor-pointer bg-orange-400 hover:bg-orange-40/80"
+        >
+          <div className="flex flex-row items-center justify-center space-x-2">
+            <span className="text-white text-center font-bold text-sm flex m-auto">
+              Next
+            </span>
+            <Image src={ArrowRight} alt="Arrow Right" width={16} height={16} />
+          </div>
+        </button>
+      </footer>
     </div>
   );
 };
