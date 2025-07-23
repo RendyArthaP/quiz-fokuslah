@@ -131,7 +131,7 @@ const ResultsPage = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
+    <div className="max-w-7xl mx-auto space-y-6">
       {/* Header Results */}
       <div
         className={`${performance.bgColor} border rounded-xl p-6 text-center`}
