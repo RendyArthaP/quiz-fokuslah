@@ -33,10 +33,10 @@ export function FeedbackCard() {
       return;
     }
     if (isLastQuestion) {
-      router.push("/result");
+      return router.replace("/result");
     }
 
-    nextQuestion();
+    return nextQuestion();
   };
 
   const handleWordingFeedback = () => {

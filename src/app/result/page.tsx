@@ -197,7 +197,7 @@ const ResultsPage = () => {
         </div>
       </div>
 
-      {/* Insights & Analytics - IMPROVED DESIGN */}
+      {/* Insights & Analytics */}
       <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-lg">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center">
