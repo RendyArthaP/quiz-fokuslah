@@ -21,20 +21,20 @@ const ResultsPage = () => {
   const content = {
     my: {
       excellent: {
-        title: "Luar Biasa! 🎉",
+        title: "Luar Biasa!",
         message: "Awak ada potensi besar dalam Matematik!",
       },
       good: {
-        title: "Bagus Sangat! 👏",
+        title: "Bagus Sangat!",
         message: "Dengan sedikit latihan lagi, awak boleh jadi yang terbaik!",
       },
       keepTrying: {
-        title: "Terus Berusaha! 💪",
+        title: "Terus Berusaha!",
         message: "Setiap pakar pernah jadi pemula. Jom tingkatkan lagi!",
       },
       stats: { correct: "Betul", accuracy: "Ketepatan", time: "Masa" },
       analysis: {
-        title: "📊 Analisis Keupayaan Awak",
+        title: "Analisis Keupayaan Awak",
         subjects: {
           algebra: "Algebra & Persamaan",
           geometry: "Geometri & Pengukuran",
@@ -50,7 +50,7 @@ const ResultsPage = () => {
         },
       },
       cta: {
-        title: "🚀 Nak Tingkatkan Keupayaan Awak?",
+        title: "Nak Tingkatkan Keupayaan Awak?",
         description:
           "Sertai ribuan pelajar lain yang dah tingkatkan markah Matematik mereka sehingga 40%!",
         startLearning: "Mula Belajar Sekarang",
@@ -59,20 +59,20 @@ const ResultsPage = () => {
     },
     en: {
       excellent: {
-        title: "Outstanding! 🎉",
+        title: "Outstanding!",
         message: "You have great potential in Mathematics!",
       },
       good: {
-        title: "Great Job! 👏",
+        title: "Great Job!",
         message: "With a little more practice, you can be the best!",
       },
       keepTrying: {
-        title: "Keep Fighting! 💪",
+        title: "Keep Fighting!",
         message: "Every expert was once a beginner. Let's improve more!",
       },
       stats: { correct: "Correct", accuracy: "Accuracy", time: "Time" },
       analysis: {
-        title: "📊 Your Ability Analysis",
+        title: "Your Ability Analysis",
         subjects: {
           algebra: "Algebra & Equations",
           geometry: "Geometry & Measurement",
@@ -88,7 +88,7 @@ const ResultsPage = () => {
         },
       },
       cta: {
-        title: "🚀 Want to Improve Your Skills?",
+        title: "Want to Improve Your Skills?",
         description:
           "Join thousands of other students who have improved their Math scores by up to 40%!",
         startLearning: "Start Learning Now",
@@ -236,14 +236,14 @@ const ResultsPage = () => {
         <p className="text-gray-600 mb-4">{text.cta.description}</p>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 flex items-center justify-center gap-2">
+          <button className="flex-1 bg-gradient-to-r bg-orange-400 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 flex items-center justify-center gap-2">
             {text.cta.startLearning}
             <ArrowRight className="w-5 h-5" />
           </button>
 
           <button
             onClick={onRestart}
-            className="flex-1 border-2 border-gray-300 text-gray-700 font-semibold py-3 px-6 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all duration-200"
+            className="flex-1 border-2 border-orange-400 text-orange-400 font-semibold py-3 px-6 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all duration-200"
           >
             {text.cta.tryAgain}
           </button>

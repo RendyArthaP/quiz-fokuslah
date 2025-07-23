@@ -12,8 +12,16 @@ import { useRouter } from "next/navigation";
 
 export function FeedbackCard() {
   const router = useRouter();
-  const { getCurrentQuestion, quizState, nextQuestion, getQuestions } =
-    useQuizContext();
+  const {
+    getCurrentQuestion,
+    quizState,
+    nextQuestion,
+    getQuestions,
+    currentLanguage,
+  } = useQuizContext();
+
+  const { isPaused } = quizState;
+
   const question = getCurrentQuestion();
   const selectedAnswer = quizState.answers[quizState.currentQuestion];
   const isCorrect = selectedAnswer === question.correctAnswer;
@@ -21,11 +29,30 @@ export function FeedbackCard() {
     quizState.currentQuestion === getQuestions().length - 1;
 
   const handleNext = () => {
+    if (isPaused) {
+      return;
+    }
     if (isLastQuestion) {
       router.push("/result");
     }
 
     nextQuestion();
+  };
+
+  const handleWordingFeedback = () => {
+    if (isCorrect) {
+      return currentLanguage === "my" ? "Benar!" : "Correct!";
+    } else {
+      return currentLanguage === "my" ? "Belum Tepat" : "Incorrect!";
+    }
+  };
+
+  const handleWordingButton = () => {
+    if (isLastQuestion) {
+      return currentLanguage === "my" ? "Lihat Hasil" : "See Results";
+    } else {
+      return currentLanguage === "my" ? "Lanjut Soal Berikutnya" : "Next";
+    }
   };
 
   return (
@@ -41,7 +68,7 @@ export function FeedbackCard() {
             isCorrect ? "text-green-600" : "text-red-600"
           }`}
         >
-          {isCorrect ? "Benar!" : "Belum Tepat"}
+          {handleWordingFeedback()}
         </h3>
       </div>
 
@@ -61,11 +88,15 @@ export function FeedbackCard() {
           <div className="flex items-center gap-2">
             <Heart className="w-5 h-5 text-orange-600" />
             <p className="text-orange-800 font-medium">
-              Nggak apa-apa! Setiap salah itu langkah menuju benar!
+              {currentLanguage === "my"
+                ? "Nggak apa-apa! Setiap salah itu langkah menuju benar!"
+                : "No worries! Every mistake is a step towards the right answer!"}
             </p>
           </div>
           <p className="text-sm text-orange-700 mt-1">
-            Yang penting kamu udah berani coba. Keep learning! 💪
+            {currentLanguage === "my"
+              ? "Terus berusaha, kamu pasti bisa!"
+              : "Keep trying, you can do it!"}
           </p>
         </div>
       )}
@@ -73,16 +104,19 @@ export function FeedbackCard() {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
         <div className="flex items-center gap-2 mb-2">
           <Lightbulb className="w-5 h-5 text-blue-600" />
-          <span className="font-medium text-blue-800">Penjelasan:</span>
+          <span className="font-medium text-blue-800">
+            {currentLanguage === "my" ? "Penjelasan:" : "Explanation:"}
+          </span>
         </div>
         <p className="text-blue-700">{question.explanation}</p>
       </div>
 
       <button
         onClick={handleNext}
-        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+        disabled={isPaused}
+        className="w-full bg-orange-400 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
       >
-        {isLastQuestion ? "Lihat Hasil" : "Lanjut Soal Berikutnya"}
+        {handleWordingButton()}
       </button>
     </div>
   );

@@ -11,6 +11,7 @@ export const spmMathQuestionsEnglish: Question[] = [
     motivationalText: "Awesome! You understand linear equations perfectly!",
     statisticText:
       "Only 7 out of 10 students can answer this question correctly!",
+    timeLimit: 0,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const spmMathQuestionsEnglish: Question[] = [
     motivationalText: "Great! You've mastered the triangle area formula!",
     statisticText:
       "85% of students often get confused with this formula, but not you!",
+    timeLimit: 0,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const spmMathQuestionsEnglish: Question[] = [
       "Excellent! You understand quadratic function substitution!",
     statisticText:
       "This question can only be answered correctly by 4 out of 10 students!",
+    timeLimit: 0,
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ export const spmMathQuestionsEnglish: Question[] = [
     motivationalText: "Amazing! You've mastered the gradient concept!",
     statisticText:
       "Wow! Only 3 out of 10 students can calculate gradient accurately!",
+    timeLimit: 0,
   },
   {
     id: 5,
@@ -56,5 +60,6 @@ export const spmMathQuestionsEnglish: Question[] = [
     difficulty: "hard",
     motivationalText: "Outstanding! Logarithms are tricky but you nailed it!",
     statisticText: "Only 2 out of 10 students understand logarithms this well!",
+    timeLimit: 0,
   },
 ];

@@ -11,6 +11,7 @@ export const spmMathQuestionsMalay: Question[] = [
     motivationalText: "Wah hebat! Awak faham konsep persamaan linear!",
     statisticText:
       "Hanya 7 daripada 10 pelajar yang boleh jawab soalan ini dengan betul!",
+    timeLimit: 0,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const spmMathQuestionsMalay: Question[] = [
     motivationalText: "Bagus! Formula luas segi tiga dah awak kuasai!",
     statisticText:
       "85% pelajar selalu keliru dengan formula ini, tapi awak tak!",
+    timeLimit: 0,
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ export const spmMathQuestionsMalay: Question[] = [
     motivationalText: "Terbaik! Penggantian fungsi kuadratik dah awak faham!",
     statisticText:
       "Soalan ini hanya boleh dijawab betul oleh 4 daripada 10 pelajar!",
+    timeLimit: 0,
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ export const spmMathQuestionsMalay: Question[] = [
     motivationalText: "Cemerlang! Konsep kecerunan dah awak kuasai!",
     statisticText:
       "Wow! Cuma 3 daripada 10 pelajar yang boleh kira kecerunan dengan tepat!",
+    timeLimit: 0,
   },
   {
     id: 5,
@@ -55,5 +59,6 @@ export const spmMathQuestionsMalay: Question[] = [
     motivationalText: "Luar biasa! Logaritma memang susah tapi awak boleh!",
     statisticText:
       "Hanya 2 daripada 10 pelajar yang faham logaritma sebaik ini!",
+    timeLimit: 0,
   },
 ];
