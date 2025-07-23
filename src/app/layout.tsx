@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import QuizContext from "@/context/QuizContext";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable}`}>{children}</body>
+      <body className={`${montserrat.variable}`}>
+        <QuizContext>{children}</QuizContext>
+      </body>
     </html>
   );
 }
