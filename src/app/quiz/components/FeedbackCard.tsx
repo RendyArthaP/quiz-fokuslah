@@ -56,7 +56,7 @@ export function FeedbackCard() {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-l-blue-500">
+    <div className="bg-white rounded-xl shadow-lg p-6 border-l-4 border-l-blue-400">
       <div className="flex items-center gap-3 mb-4">
         {isCorrect ? (
           <CheckCircle className="w-8 h-8 text-green-500" />
@@ -76,7 +76,7 @@ export function FeedbackCard() {
       {isCorrect ? (
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
           <p className="text-green-800 font-medium">
-            🎉 {question.motivationalText}
+            {question.motivationalText}
           </p>
           <div className="flex items-center gap-2 mt-2">
             <TrendingUp className="w-4 h-4 text-green-600" />

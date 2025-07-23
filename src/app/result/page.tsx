@@ -198,7 +198,7 @@ const ResultsPage = () => {
       </div>
 
       {/* Insights & Analytics */}
-      <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 text-white">
+      <div className="rounded-xl p-6 text-black border-2 border-orange-400">
         <h3 className="text-xl font-bold mb-4">{text.analysis.title}</h3>
         <div className="space-y-3">
           <div className="flex justify-between items-center">
@@ -236,14 +236,14 @@ const ResultsPage = () => {
         <p className="text-gray-600 mb-4">{text.cta.description}</p>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className="flex-1 bg-gradient-to-r bg-orange-400 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 flex items-center justify-center gap-2">
+          <button className="flex-1 bg-gradient-to-r bg-orange-400 text-white font-semibold py-3 px-6 rounded-lg cursor-pointer hover:bg-orange-500 transition-all duration-200 flex items-center justify-center gap-2">
             {text.cta.startLearning}
             <ArrowRight className="w-5 h-5" />
           </button>
 
           <button
             onClick={onRestart}
-            className="flex-1 border-2 border-orange-400 text-orange-400 font-semibold py-3 px-6 rounded-lg hover:border-blue-500 hover:text-blue-600 transition-all duration-200"
+            className="flex-1 border-2 border-orange-400 text-orange-400 font-semibold py-3 px-6 rounded-lg cursor-pointer transition-all duration-200"
           >
             {text.cta.tryAgain}
           </button>
