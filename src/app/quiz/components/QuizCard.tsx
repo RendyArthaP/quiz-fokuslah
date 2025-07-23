@@ -3,7 +3,8 @@
 import { useQuizContext } from "@/context/QuizContext";
 
 const QuizCard = () => {
-  const { getCurrentQuestion, quizState, answerQuestion } = useQuizContext();
+  const { getCurrentQuestion, quizState, answerQuestion, currentLanguage } =
+    useQuizContext();
   const question = getCurrentQuestion();
   const selectedAnswer = quizState.answers[quizState.currentQuestion];
   const { isPaused } = quizState;
@@ -22,6 +23,26 @@ const QuizCard = () => {
     answerQuestion(index);
   };
 
+  const handleLevelWordingByLanguange = () => {
+    if (currentLanguage === "my") {
+      if (question.difficulty === "easy") {
+        return "Mudah";
+      }
+      if (question.difficulty === "medium") {
+        return "Sedang";
+      }
+      return "Sulit";
+    } else {
+      if (question.difficulty === "easy") {
+        return "Easy";
+      }
+      if (question.difficulty === "medium") {
+        return "Medium";
+      }
+      return "Hard";
+    }
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-lg p-6">
       <div className="mb-6">
@@ -34,11 +55,7 @@ const QuizCard = () => {
               : "bg-red-100 text-red-800"
           }`}
         >
-          {question.difficulty === "easy"
-            ? "Mudah"
-            : question.difficulty === "medium"
-            ? "Sedang"
-            : "Sulit"}
+          {handleLevelWordingByLanguange()}
         </div>
 
         <h2 className="text-xl font-bold text-gray-800 leading-relaxed">
