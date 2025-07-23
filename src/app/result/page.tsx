@@ -197,29 +197,63 @@ const ResultsPage = () => {
         </div>
       </div>
 
-      {/* Insights & Analytics */}
-      <div className="rounded-xl p-6 text-black border-2 border-orange-400">
-        <h3 className="text-xl font-bold mb-4">{text.analysis.title}</h3>
-        <div className="space-y-3">
-          <div className="flex justify-between items-center">
-            <span>{text.analysis.subjects.algebra}</span>
-            <span className="font-bold">
+      {/* Insights & Analytics - IMPROVED DESIGN */}
+      <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-lg">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center">
+            <TrendingUp className="w-5 h-5 text-white" />
+          </div>
+          <h3 className="text-xl font-bold text-gray-800">
+            {text.analysis.title}
+          </h3>
+        </div>
+
+        <div className="space-y-4">
+          <div className="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+            <span className="font-medium text-gray-700">
+              {text.analysis.subjects.algebra}
+            </span>
+            <span
+              className={`font-bold px-3 py-1 rounded-full text-sm ${
+                percentage >= 60
+                  ? "bg-green-100 text-green-700"
+                  : "bg-amber-100 text-amber-700"
+              }`}
+            >
               {percentage >= 60
                 ? text.analysis.levels.good
                 : text.analysis.levels.needPractice}
             </span>
           </div>
-          <div className="flex justify-between items-center">
-            <span>{text.analysis.subjects.geometry}</span>
-            <span className="font-bold">
+
+          <div className="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+            <span className="font-medium text-gray-700">
+              {text.analysis.subjects.geometry}
+            </span>
+            <span
+              className={`font-bold px-3 py-1 rounded-full text-sm ${
+                percentage >= 70
+                  ? "bg-green-100 text-green-700"
+                  : "bg-blue-100 text-blue-700"
+              }`}
+            >
               {percentage >= 70
                 ? text.analysis.levels.excellent
                 : text.analysis.levels.fair}
             </span>
           </div>
-          <div className="flex justify-between items-center">
-            <span>{text.analysis.subjects.functions}</span>
-            <span className="font-bold">
+
+          <div className="flex justify-between items-center p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+            <span className="font-medium text-gray-700">
+              {text.analysis.subjects.functions}
+            </span>
+            <span
+              className={`font-bold px-3 py-1 rounded-full text-sm ${
+                percentage >= 80
+                  ? "bg-purple-100 text-purple-700"
+                  : "bg-gray-100 text-gray-700"
+              }`}
+            >
               {percentage >= 80
                 ? text.analysis.levels.master
                 : text.analysis.levels.keepLearning}
