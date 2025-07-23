@@ -4,18 +4,13 @@ import ArrowRight from "@/app/assets/arrow-right.svg";
 import ArrowLeft from "@/app/assets/arrow-left.svg";
 import { useRouter } from "next/navigation";
 
-import {
-  Languange,
-  useQuizContextFunction,
-  useQuizContextState,
-} from "@/context/QuizContext";
+import { useQuizContext } from "@/context/QuizContext";
 import Image from "next/image";
 import React from "react";
 import LanguangeBar from "./components/LanguangeBar/LanguangeBar";
 
 const OnboardingPages = () => {
-  const { languange } = useQuizContextState();
-  const { setLanguange } = useQuizContextFunction();
+  const { setLanguage, currentLanguage } = useQuizContext();
   const router = useRouter();
 
   const handleNextOnBoarding = () => {
@@ -24,11 +19,6 @@ const OnboardingPages = () => {
 
   const handleBackOnBoarding = () => {
     router.back();
-  };
-
-  const handleLanguageClick = () => {
-    const newLanguage: Languange = languange === "my" ? "eng" : "my";
-    setLanguange(newLanguage);
   };
 
   return (
@@ -62,14 +52,14 @@ const OnboardingPages = () => {
         </div>
       </div>
       <LanguangeBar
-        active={languange === "my"}
+        active={currentLanguage === "my"}
         typeCountry="my"
-        onClick={handleLanguageClick}
+        onClick={() => setLanguage("my")}
       />
       <LanguangeBar
-        active={languange === "eng"}
-        typeCountry="eng"
-        onClick={handleLanguageClick}
+        active={currentLanguage === "en"}
+        typeCountry="en"
+        onClick={() => setLanguage("en")}
       />
       <footer className="text-center fixed bottom-0 left-0 w-full bg-white p-4 flex items-center justify-between gap-4 border-t border-gray-200">
         <button

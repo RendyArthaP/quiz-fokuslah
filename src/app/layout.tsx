@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import QuizContext from "@/context/QuizContext";
+import { QuizProvider } from "@/context/QuizContext";
 
 const montserrat = Montserrat({
-  variable: "--font-montserrat",
   subsets: ["latin"],
+  variable: "--font-montserrat",
   weight: ["400", "500", "600", "700"],
 });
 
@@ -20,9 +20,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${montserrat.variable}`}>
-        <QuizContext>{children}</QuizContext>
+    <html lang="en" className={`${montserrat.variable}`}>
+      <body>
+        <QuizProvider>{children}</QuizProvider>
       </body>
     </html>
   );

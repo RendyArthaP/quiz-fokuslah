@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 interface Props {
   active: boolean;
-  typeCountry: "my" | "eng";
+  typeCountry: "my" | "en";
   onClick: () => void;
 }
 
@@ -23,7 +23,7 @@ const LanguangeBar: FC<PropsWithChildren<Props>> = ({
           "border !border-[#62c6f9] bg-blue-100": active,
         }
       )}
-      onClick={onClick}
+      onClick={() => onClick()}
     >
       <div className="flex items-center gap-2 p-2">
         <Image
