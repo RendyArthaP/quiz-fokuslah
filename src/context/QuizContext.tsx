@@ -57,7 +57,7 @@ interface QuizContextType {
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
 export function QuizProvider({ children }: { children: React.ReactNode }) {
-  // Language state - default ke Bahasa Malaysia
+  // Language state
   const [currentLanguage, setCurrentLanguage] = useState<Language>("my");
 
   // Get questions based on language
@@ -70,7 +70,7 @@ export function QuizProvider({ children }: { children: React.ReactNode }) {
     }
   }, [currentLanguage]);
 
-  // Quiz state - TANPA localStorage, dengan proper validation
+  // Quiz state
   const [quizState, setQuizState] = useState<QuizState>(() => {
     const questions = getQuestions();
     return {
