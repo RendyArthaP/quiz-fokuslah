@@ -127,7 +127,7 @@ const ResultsPage = () => {
   const onRestart = () => {
     router.push("/");
     // Reset quiz state
-    resetQuiz();
+    return resetQuiz();
   };
 
   return (
