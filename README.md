@@ -11,44 +11,43 @@
 
 ---
 
-## 📁 Project Structure
+## 🚀 **Development Workflow**
 
+### **Getting Started**
+
+\`\`\`bash
+
+# Clone the repository
+
+git clone https://github.com/your-username/fokuslah-quiz.git
+
+# Navigate to project directory
+
+cd fokuslah-quiz
+
+# Install dependencies with Yarn
+
+yarn install
+
+# Start development server
+
+yarn dev
 \`\`\`
-src/
-├── app/
-│ ├── assets/
-│ │ ├── arrow-left.svg # Navigation arrow icon
-│ │ ├── arrow-right.svg # Navigation arrow icon
-│ │ ├── bird_chat.svg # Chat/feedback illustration
-│ │ ├── fokuslah-onboarding.png # Onboarding hero image
-│ │ ├── my_flag.svg # Malaysia flag icon
-│ │ └── uk_flag.svg # UK flag icon
-│ ├── onboarding/
-│ │ ├── components/
-│ │ │ └── LanguageBar/
-│ │ │ └── LanguageBar.tsx # Language selection component
-│ │ └── page.tsx # Onboarding page route
-│ ├── quiz/
-│ │ ├── components/
-│ │ │ ├── FeedbackCard.tsx # Answer feedback display
-│ │ │ └── QuizCard.tsx # Question display card
-│ │ └── page.tsx # Quiz page route
-│ ├── result/
-│ │ └── page.tsx # Results page route
-│ ├── favicon.ico # Browser favicon
-│ ├── globals.css # Global styles and typography
-│ ├── layout.tsx # Root layout with Montserrat font
-│ └── page.tsx # Main application entry
-├── components/
-│ ├── ProgressBar.tsx # Visual progress indicator
-│ └── Timer.tsx # Real-time countdown timer
-├── context/
-│ └── QuizContext.tsx # Centralized state management
-├── lib/
-│ ├── quiz-english.ts # English questions
-│ └── quiz-malaysia.ts # Bahasa Malaysia questions
-└── types/
-└── quiz.type.d.ts # TypeScript type definitions
+
+### **Development Server**
+
+\`\`\`bash
+
+# Start development server
+
+yarn dev
+
+# Server will be available at:
+
+# Local: http://localhost:3000
+
+# Network: http://[your-ip]:3000
+
 \`\`\`
 
 ---
