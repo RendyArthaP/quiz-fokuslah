@@ -74,10 +74,7 @@ const track = (eventName: string, properties: Record<string, any> = {}) => {
     }
   });
 
-  // Development logging
-  if (process.env.NODE_ENV === "development") {
-    console.log("📊 Analytics Event:", eventName, properties);
-  }
+  console.log("📊 Analytics Event:", eventName, properties);
 };
 
 // Quiz-specific tracking functions
